@@ -1,8 +1,8 @@
-| id | name | number |  table 1
+| id | name | number | -> table 1(authors)
 
-link( id-> member id )
+link( id -> member id )
 
-| member_id | title | images(blob) | description | time(время, когда было выложено объявление) | table 2
+| member_id | title | images(blob) | description | time(время, когда было выложено объявление) | -> table 2(publications)
 
 Добавление записи:
 
