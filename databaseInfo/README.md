@@ -1,9 +1,9 @@
-| Tables in Database Store | 
-| -------------------------|
-| Users                    | 
-| Posts                    |  
-
-| *Users 		   | 
+| Tables in Database Store |	| *Users 		   | 
+| -------------------------|	| -------------------------|
+| Users                    |	| name                     |
+| Posts                    |	| countryCode              |
+                             	| number                   |
+| *Users 		   |	| maybe *fullNumber        |  
 | -------------------------|
 | id(->member_id)          | 
 | name                     |
