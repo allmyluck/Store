@@ -1,15 +1,23 @@
-| Tables in Database Store |	| *Users 		   | 
-| -------------------------|	| -------------------------|
-| Users                    |	| name                     |
-| Posts                    |	| countryCode              |
-                             	| number                   |
-| *Users 		   |	| maybe *fullNumber        |  
+| Tables in Database Store |
+| -------------------------|
+| Users                    |
+| Posts                    |
+
+| *Users 		   |
 | -------------------------|
 | id(->member_id)          | 
 | name                     |
 | countryCode              | 
 | number                   |
 | maybe *fullNumber        |  
+
+---
+
+*fullNumber : ="+" + countryCode + number;
+
+*Users : id - primary key, auto-incrementc;
+
+***
 
 | *Posts 		   | 
 | -------------------------|
@@ -20,11 +28,11 @@
 | time                     |  
 
 
-*fullNumber : ="+" + countryCode + number;
+---
 
-*Users : id - primary key, auto-incrementc;
+*Posts : link( id -> member id )
 
-link( id -> member id )
+***
 
 Добавление записи:
 
