@@ -1,8 +1,8 @@
-| id | name | number | -> table 1(authors)
+| id(int) | name(varchar) | countryCode(int) |  number(int) | maybe fullNumber = + countryCode number| -> table 1(authors) id - primary key, auto-increment
 
 link( id -> member id )
 
-| member_id | title | images(blob) | description | time(время, когда было выложено объявление) | -> table 2(publications)
+| member_id(int) | title(varchar) | images(blob) | description(text) | time(время, когда было выложено объявление)(datetime) | -> table 2(publications)
 
 Добавление записи:
 
