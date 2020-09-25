@@ -28,7 +28,7 @@ Tables in Database Store : Users, Posts
 
 ---
 
-*Posts : link( Users.user_id -> Posts.user_id ); link(Images.image_id -> Posts.image_id)
+*Posts : link( Users.user_id -> Posts.user_id ); link(Posts.image_id -> Images.image_id)
 
 
 ***
@@ -37,6 +37,27 @@ Tables in Database Store : Users, Posts
 | -------------------------|
 | image_id                 | 
 | image(blob)              |
+
+
+---
+
+Examle:
+
+1)INSERT INTO Users(.(1)#, 'Gena', 375, 275303032, 375275303032 || +375275303032(text));
+
+2)INSERT INTO Posts(1##, 'Beer',.(1)!, 'good Beer', 500, 21:9:2020 16:32:00);
+
+3)INSERT INTO Images(1!!, picture1.png);
+
+4)INSERT INTO Images(1##, picture2.png);
+
+.(x) - x auto_increment and maybe primary;
+
+link(#, ##) -> link(Users.user_id(unique) -> Posts.user_id). 
+
+link(!, !!) -> link(Posts.image_id(unique) -> Images.image_id).
+
+***
 
 
 
