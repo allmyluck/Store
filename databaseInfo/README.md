@@ -2,7 +2,7 @@ Tables in Database Store : Users, Posts
 
 | *Users 		   |
 | -------------------------|
-| id(->member_id)          | 
+| user_id                  | 
 | name                     |
 | countryCode              | 
 | number                   |
@@ -12,24 +12,33 @@ Tables in Database Store : Users, Posts
 
 *fullNumber : ="+" + countryCode + number;
 
-*Users : id - primary key, auto-incrementc;
+*Users : user_id - primary key, auto-incrementc;
 
 ***
 
 | *Posts 		   | 
 | -------------------------|
-| member_id                | 
+| user_id                  | 
 | title                    |
-| images or image(blob)    | 
+| image_id*                | 
 | description              |
+| price                    |
 | time                     |  
 
 
 ---
 
-*Posts : link( id -> member id )
+*Posts : link( Users.user_id -> Posts.user_id ); link(Images.image_id -> Posts.image_id)
+
 
 ***
+
+| Images 		   | 
+| -------------------------|
+| image_id                 | 
+| image(blob)              |
+
+
 
 Добавление записи:
 
