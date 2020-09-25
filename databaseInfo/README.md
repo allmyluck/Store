@@ -1,7 +1,4 @@
-| Tables in Database Store |
-| -------------------------|
-| Users                    |
-| Posts                    |
+Tables in Database Store : Users, Posts
 
 | *Users 		   |
 | -------------------------|
