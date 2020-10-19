@@ -5,7 +5,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Posts", schema = "Store")
-public class Posts {
+public class Post {
     @Column(name = "user_id")
     private int userId;
 
@@ -31,11 +31,11 @@ public class Posts {
     private String dateTime;
 
     @OneToMany(fetch = FetchType.LAZY ,mappedBy = "Posts")
-    private Set<Images> images;
+    private Set<Image> images;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "image_id", nullable = false)
-    private Users user;
+    private User user;
 
     //...
 }

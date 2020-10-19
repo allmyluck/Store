@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Images", schema = "Store")
-public class Images {
+public class Image {
     @Id
     @Column(name = "id")
     private int id;
@@ -15,7 +15,7 @@ public class Images {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "id", nullable = false)
-    private Posts post;
+    private Post post;
 
     //...
 }

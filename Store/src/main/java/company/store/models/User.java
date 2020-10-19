@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Users", schema = "Store")
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Users {
     private String number; // 15
 
     @OneToMany(mappedBy = "Users")
-    private Set<Posts> posts;
+    private Set<Post> posts;
 
     //...
 }
