@@ -14,6 +14,8 @@ public class User {
     @Column(name = "id")
     private int id;
 
+    @Column(name = "role_id")
+    private int role_id;
 
     @Column(name = "name")
     private String name; // 256
@@ -26,6 +28,10 @@ public class User {
 
     @OneToMany(mappedBy = "Users")
     private Set<Post> posts;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
 
     //...
 }

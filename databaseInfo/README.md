@@ -1,8 +1,16 @@
-Tables in Database Store : Users, Posts
+Tables in Database Store :Roles, Users, Posts, Images
+
+| *Roles 		   |
+| -------------------------|
+| id                       | 
+| role_name                |   
+
+
 
 | *Users 		   |
 | -------------------------|
-| user_id                  | 
+| id                       | 
+| role_id                  | 
 | name                     |
 | countryCode              | 
 | number                   |
@@ -20,57 +28,35 @@ Tables in Database Store : Users, Posts
 | -------------------------|
 | user_id                  | 
 | title                    |
-| image_id*                | 
+| image_id                 | 
 | description              |
 | price                    |
 | time                     |  
 
 
----
-
-*Posts : link( Users.user_id -> Posts.user_id ); link(Posts.image_id -> Images.image_id)
-
-
-***
 
 | Images 		   | 
 | -------------------------|
-| image_id                 | 
-| image(blob)              |
+| id                       | 
+| image(blob)              | 
 
 
 ---
 
-Examle:
+Roles(id) -> Users(role_id) = OneToMany
 
-1)INSERT INTO Users(.(1)#, 'Gena', 375, 275303032, 375275303032 || +375275303032(text));
+Users(role_id) -> Roles(id) = ManyToOne
 
-2)INSERT INTO Posts(1##, 'Beer',.(1)!, 'good Beer', 500, 21:9:2020 16:32:00);
+Posts(user_id) -> Users(id) = ManyToOne
 
-3)INSERT INTO Images(1!!, picture1.png);
+Users(id) -> Posts(user_id) = OneToMany
 
-4)INSERT INTO Images(1##, picture2.png);
+Images(id) -> Posts(image_id) = ManyToOne
 
-.(x) - x auto_increment and maybe primary;
+Posts(image_id) -> Images(id) = OneToMany
 
-link(#, ##) -> link(Users.user_id(unique) -> Posts.user_id). 
-
-link(!, !!) -> link(Posts.image_id(unique) -> Images.image_id).
+ALL ManyToOne = (CASCADE ON DELETE AND ON UPGRADE) 
 
 ***
 
 
-
-Добавление записи:
-
-1) если нет такого имя и номера добавляем в таблицу 1, иначе добавляем запись в таблицу 2 с member_id = id из таблицы 1.
-
-Удаление:
-
-1) пользователь - с помощью join ; вначале из table 2, затем пользователя из table 1
-
-2) объявление - по заголовку(title)
-
-Материалы:
-
-https://shra.ru/2017/09/sql-join-v-primerakh-s-opisaniem/
