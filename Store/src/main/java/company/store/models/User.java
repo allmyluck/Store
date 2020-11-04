@@ -26,11 +26,11 @@ public class User {
     @Column(name = "number")
     private String number; // 15
 
-    @OneToMany(mappedBy = "Users")
+    @OneToMany(mappedBy = "user")
     private Set<Post> posts;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id",insertable = false, updatable = false, nullable = false)
     private Role role;
 
     //...

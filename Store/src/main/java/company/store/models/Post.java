@@ -28,13 +28,13 @@ public class Post {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "datetime")
-    private String dateTime;
+    private java.util.Date dateTime;
 
-    @OneToMany(fetch = FetchType.LAZY ,mappedBy = "Posts")
+    @OneToMany(fetch = FetchType.LAZY ,mappedBy = "post")
     private Set<Image> images;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "image_id", nullable = false)
+    @JoinColumn(name = "user_id",insertable = false, updatable = false, nullable = false)
     private User user;
 
     //...
