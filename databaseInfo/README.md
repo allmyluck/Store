@@ -3,7 +3,7 @@ Tables in Database Store :Roles, Users, Posts, Images
 | *Roles 		   |
 | -------------------------|
 | id                       |
-| role_id                  |
+| user_id                  |
 | role_name                |   
 
 

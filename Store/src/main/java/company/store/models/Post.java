@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "Posts", schema = "Store")
+@Table(name = "posts", schema = "Store")
 public class Post {
     @Column(name = "user_id")
     private int userId;
@@ -27,7 +27,7 @@ public class Post {
 
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "datetime")
+    @Column(name = "dateTime")
     private java.util.Date dateTime;
 
     @OneToMany(fetch = FetchType.LAZY ,mappedBy = "post")
