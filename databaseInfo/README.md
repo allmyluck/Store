@@ -2,15 +2,15 @@ Tables in Database Store :Roles, Users, Posts, Images
 
 | *Roles 		   |
 | -------------------------|
-| id                       | 
+| id                       |
+| role_id                  |
 | role_name                |   
 
 
 
 | *Users 		   |
 | -------------------------|
-| id                       | 
-| role_id                  | 
+| user_id                  |
 | name                     |
 | countryCode              | 
 | number                   |
@@ -37,23 +37,24 @@ Tables in Database Store :Roles, Users, Posts, Images
 
 | Images 		   | 
 | -------------------------|
-| id                       | 
+| id                       |
+| image_id                 | 
 | image(blob)              | 
 
 
 ---
 
-Roles(id) -> Users(role_id) = OneToMany
+Users(user_id) -> Roles(user_id) = OneToMany
 
-Users(role_id) -> Roles(id) = ManyToOne
+Roles(user_id) -> Users(user_id) = ManyToOne
 
-Posts(user_id) -> Users(id) = ManyToOne
+Posts(user_id) -> Users(user_id) = ManyToOne
 
-Users(id) -> Posts(user_id) = OneToMany
+Users(user_id) -> Posts(user_id) = OneToMany
 
-Images(id) -> Posts(image_id) = ManyToOne
+Images(image_id) -> Posts(image_id) = ManyToOne
 
-Posts(image_id) -> Images(id) = OneToMany
+Posts(image_id) -> Images(image_id) = OneToMany
 
 ALL ManyToOne = (CASCADE ON DELETE AND ON UPGRADE) 
 
