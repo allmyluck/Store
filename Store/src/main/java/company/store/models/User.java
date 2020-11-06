@@ -26,10 +26,35 @@ public class User {
     @Column(name = "number")
     private String number; // 15
 
+    @Column(name = "role_name")
+    private String role_name;
+
     @OneToMany(mappedBy = "user")
     private Set<Post> posts;
 
-    @OneToMany(mappedBy = "user")
-    private Set<Role> roles;
-    //...
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRole_name() {
+        return role_name;
+    }
+
+    public void setRole_name(String role_name) {
+        this.role_name = role_name;
+    }
+//...
+
 }

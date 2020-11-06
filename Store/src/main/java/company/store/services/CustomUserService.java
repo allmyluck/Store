@@ -1,7 +1,6 @@
 package company.store.services;
 
 import company.store.models.User;
-import company.store.repositories.RoleRepository;
 import company.store.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,11 +16,10 @@ public class CustomUserService implements UserDetailsService {
     @Autowired
     private  UserRepository userRepository;
 
-    @Autowired
-    private RoleRepository roleRepository;
-
+    /*
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
+    */
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -30,6 +28,6 @@ public class CustomUserService implements UserDetailsService {
         if(user == null) {
             throw new  UsernameNotFoundException("Not found");
         }
-        return (UserDetails) user;
+        return  (UserDetails) user;
     }
 }
