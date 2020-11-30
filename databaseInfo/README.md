@@ -1,11 +1,4 @@
-Tables in Database Store :Roles, Users, Posts, Images
-
-| *Roles 		   |
-| -------------------------|
-| id                       |
-| user_id                  |
-| role_name                |   
-
+Tables in Database Store :Users, Posts, Images
 
 
 | *Users 		   |
@@ -14,6 +7,7 @@ Tables in Database Store :Roles, Users, Posts, Images
 | name                     |
 | countryCode              | 
 | number                   |
+| role_name                |
 | maybe *fullNumber        |  
 
 ---
@@ -44,9 +38,6 @@ Tables in Database Store :Roles, Users, Posts, Images
 
 ---
 
-Users(user_id) -> Roles(user_id) = OneToMany
-
-Roles(user_id) -> Users(user_id) = ManyToOne
 
 Posts(user_id) -> Users(user_id) = ManyToOne
 

@@ -16,18 +16,17 @@ public class CustomUserService implements UserDetailsService {
     @Autowired
     private  UserRepository userRepository;
 
-    /*
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
-    */
+
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByName(username);
-
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+        User user = userRepository.findByLogin(login);
         if(user == null) {
             throw new  UsernameNotFoundException("Not found");
         }
         return  (UserDetails) user;
     }
+    // other methods
 }

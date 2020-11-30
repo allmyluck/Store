@@ -14,8 +14,8 @@ public class User {
     @Column(name = "user_id")
     private int user_id;
 
-    @Column(name = "name")
-    private String name; // 256
+    @Column(name = "login")
+    private String login; // 256
 
     @Column(name = "password")
     private String password; // 30
@@ -27,34 +27,11 @@ public class User {
     private String number; // 15
 
     @Column(name = "role_name")
-    private String role_name;
+    private String roleName;
 
     @OneToMany(mappedBy = "user")
     private Set<Post> posts;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRole_name() {
-        return role_name;
-    }
-
-    public void setRole_name(String role_name) {
-        this.role_name = role_name;
-    }
 //...
 
 }

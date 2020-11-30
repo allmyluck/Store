@@ -15,8 +15,8 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "image_id")
-    private int imageId;
+    @Column(name = "post_id")
+    private int postId;
 
 
     @Column(name = "description")
