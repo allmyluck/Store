@@ -31,15 +31,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 //.antMatchers("/registration").not().fullyAuthenticated()
-                .antMatchers("/posts","/login").permitAll()
-                .antMatchers("/").hasAnyRole("ADMIN")
-                .antMatchers("/lk").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/","/posts","/login").permitAll()
+                //.antMatchers("/settings").hasAnyRole("ADMIN")
                 .anyRequest().authenticated()
                 .and().formLogin().loginPage("/login")
                 .defaultSuccessUrl("/lk").failureUrl("/posts").permitAll()
                 .and().logout().logoutSuccessUrl("/posts").permitAll();
     }
-
 
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
