@@ -4,11 +4,11 @@ Tables in Database Store :Users, Posts, Images
 | *Users 		   |
 | -------------------------|
 | user_id                  |
-| name                     |
-| countryCode              | 
-| number                   |
+| login                    |
+| code_country             | 
+| password                 |
 | role_name                |
-| maybe *fullNumber        |  
+| number                   |  
 
 ---
 
@@ -20,9 +20,9 @@ Tables in Database Store :Users, Posts, Images
 
 | *Posts 		   | 
 | -------------------------|
-| user_id                  | 
+| post_id                  | 
 | title                    |
-| image_id                 | 
+| user_id                  | 
 | description              |
 | price                    |
 | time                     |  
